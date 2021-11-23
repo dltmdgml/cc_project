@@ -1,6 +1,6 @@
-var albumBucketName = 'seunghui-photo-bucket';
-var bucketRegion = 'us-east-1';
-var IdentityPoolId = 'us-east-1:6d192c33-cbc5-404b-ab9c-14af70db346d';
+var albumBucketName = '';
+var bucketRegion = '';
+var IdentityPoolId = '';
 
 AWS.config.update({
   region: bucketRegion,
