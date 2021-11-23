@@ -1,8 +1,8 @@
 const putFile = file => {
-  const BucketName = ''; // S3의 버킷 이름
-  const region = '';
-  const accessKeyId = ''; // IAM에서 생성한 사용자의 accessKeyId
-  const secretAccessKey = ''; // IAM에서 생성한 사용자의 secretAccessKey
+  const BucketName = 'cc-project-bucket11'; // S3의 버킷 이름
+  const region = 'us-east-1';
+  const accessKeyId = 'AKIAVM2MIAATSN3SFGG6'; // IAM에서 생성한 사용자의 accessKeyId
+  const secretAccessKey = 'mdCqu7JYMBdp2Y2at4R+3KlI1Q93IyA+Nz4i+ZTZ'; // IAM에서 생성한 사용자의 secretAccessKey
   
   AWS.config.update({
     region,

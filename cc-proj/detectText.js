@@ -1,6 +1,6 @@
-var BucketName = '';
-var bucketRegion = '';
-var IdentityPoolId = '';
+var BucketName = 'seunghui-photo-bucket';
+var bucketRegion = 'us-east-1';
+var IdentityPoolId = 'us-east-1:77f3bdfe-f66c-484e-9a92-6ad706086519';
 
 AWS.config.update({
   region: bucketRegion,
@@ -57,7 +57,8 @@ function displayTXT(data) {
     }
   }
 
-  console.log(detectedTXT);
-  detectedTXT = data.TextDetections.map((obj) => obj.DetectedText).join('<br>');
+  //console.log(detectedTXT);
+  detectedTXT = data.TextDetections.map((obj) => obj.DetectedText).join('\n');
   document.getElementById('output').textContent = detectedTXT; //추출한 text 출력
+  speakText(detectedTXT);
 }

@@ -7,28 +7,6 @@
   <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
 </head>
 <body>
-  <!--
-  <input id="files" type="file" />
-  <button id="button1">올리기</button>
-  <script src="putFile.js"></script>
-
-  <input id="text" type="text" />
-  <button id="button2">입력</button>
-  <script src="test2.js"></script>
-  -->
-
-  <script src="index.js"></script>
-
-  <div id="textToSynth">
-    <input autofocus size="23" type="text" id="textEntry"/>
-    <button class="btn default" onClick="speakText()">Synthesize</button>
-    <p id="result">Enter text above then click Synthesize</p>
-  </div>
-  <audio id="audioPlayback" controls>
-    <source id="audioSource" type="audio/mp3" src="">
-  </audio>
-  <script src="test3.js"></script>
-
   <script src="detectText.js"></script>
   <h1>Text Detection Demo</h1>
   <h2>Upload File</h2>
@@ -36,5 +14,17 @@
   <input type="file" accept="image/*" capture="camera" id="camera" onchange="detectObjects()">
   <h2>Image Output</h2>
   <p id="output"></p>
+
+  
+  <div id="textToSynth">
+    <p id="result">Enter text above then click Synthesize</p>
+  </div>
+  <iframe src="silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+  <audio id="audioPlayback" autoplay controls>
+    <source id="audioSource" type="audio/mp3" src="">
+  </audio>
+  <script src="test3.js"></script>
+
+  <script src="index.js"></script>
 </body>
 </html>

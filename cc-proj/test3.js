@@ -1,9 +1,9 @@
 // Initialize the Amazon Cognito credentials provider
-AWS.config.region = '';
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: ''});
+AWS.config.region = 'us-east-1';
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'us-east-1:d7570e49-67ce-4e1b-850e-e65e4abac9f0'});
 
 // Function invoked by button click
-function speakText() {
+function speakText(detectedTXT) {
     // Create the JSON parameters for getSynthesizeSpeechUrl
     var speechParams = {
         OutputFormat: "mp3",
@@ -12,7 +12,7 @@ function speakText() {
         TextType: "text",
         VoiceId: "Seoyeon"
     };
-    speechParams.Text = document.getElementById("textEntry").value;
+    speechParams.Text = detectedTXT;
     // Create the Polly service object and presigner object
     var polly = new AWS.Polly({apiVersion: '2016-06-10'});
     var signer = new AWS.Polly.Presigner(speechParams, polly)
