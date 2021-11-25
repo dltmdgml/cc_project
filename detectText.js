@@ -48,16 +48,17 @@ function detectObjects(imgData) {
 	});
 }
 
-var detectedTXT;
+
+var detectedTXT = "";
 function displayTXT(data) {
   for(var i = 0; i < data.TextDetections.length;i++){
     if(data.TextDetections[i].Type === 'LINE')
     {
-      detectedTXT = data.TextDetections[i].DetectedText;
+      detectedTXT +=data.TextDetections[i].DetectedText + " ";
     }
   }
 
   console.log(detectedTXT);
-  detectedTXT = data.TextDetections.map((obj) => obj.DetectedText).join('<br>');
   document.getElementById('output').textContent = detectedTXT; //추출한 text 출력
+  detectedTXT = ""; //초기화
 }
