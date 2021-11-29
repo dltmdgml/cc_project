@@ -14,7 +14,7 @@
  - 카메라로 찍은 이미지에서 영어로 된 텍스트를 추출하여 음성으로 변환하거나 한국어로 번역하여 음성으로 변환해주는 소프트웨어입니다.
  - 시각장애인 혹은 영어문맹자의 생활 속 불편함을 줄여주는 목적으로 개발하였습니다.
  - #### 개발 언어
-      - CSS, HTML, JAVASCRIPT
+      - CSS, HTML, JavaScript
  - #### 사용한 AWS 서비스
       - AWS Rekognition (detect text in image)
       - AWS Polly
