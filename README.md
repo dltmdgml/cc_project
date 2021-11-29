@@ -1,5 +1,8 @@
-### CC_project
+## CC_project
 
+### 프로젝트 멤버 이름 및 담당 파트
+- [김민정](https://github.com/MinjeongKim03) (빅데이터학과 3학년)
+- [이승희](https://github.com/dltmdgml) (빅데이터학과 3학년)
 >개발 SW에 대한 소개
 >> 업로된 이미지에서 텍스트를 추출하여 음성으로 변환해주는 SW입니다.
 
