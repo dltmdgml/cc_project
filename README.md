@@ -26,7 +26,7 @@
 ### 프로젝트 개발 결과물 소개
  - 웹 페이지를 제작하여 모바일 뿐만 아니라 웹캠이 있는 PC 환경에서 사용 가능합니다.  
  - 인터넷 익스플로어를 제외한 모든 브라우저에서 사용이 가능합니다. 
- - ![image](https://user-images.githubusercontent.com/52689963/144101483-5383b010-fdab-4f8f-bcb9-ae86a187117a.png)
+ ![image](https://user-images.githubusercontent.com/52689963/144101483-5383b010-fdab-4f8f-bcb9-ae86a187117a.png)
 
 
 ### 개발 결과물을 사용하는 방법
