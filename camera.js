@@ -1,8 +1,8 @@
 let constraints = { video: { facingMode: "environment" }, audio: false}
-const cameraView = document.querySelector("#camera--view");
-const cameraOutput1 = document.querySelector("#camera--output");
-const cameraSensor = document.querySelector("#camera--sensor");
-const cameraTrigger = document.querySelector("#camera--trigger");
+const cameraView = document.querySelector("#camera--view"),
+      cameraOutput1 = document.querySelector("#camera--output"),
+      cameraSensor = document.querySelector("#camera--sensor"),
+      cameraTrigger = document.querySelector("#camera--trigger");
 
 function cameraStart(){
     navigator.mediaDevices.getUserMedia(constraints)
@@ -15,7 +15,7 @@ function cameraStart(){
     })
 }
 
-function dataURLtoFile(dataurl) {
+function dataURLtoBlob(dataurl) {
     var arr = dataurl.split(','),
         mime = arr[0].match(/:(.*?);/)[1],
         bstr = atob(arr[1]), 
@@ -25,25 +25,32 @@ function dataURLtoFile(dataurl) {
     while(n--){
         u8arr[n] = bstr.charCodeAt(n);
     }
-    
-    return new Blob([u8arr], {type:mime});
+    var result = new Blob([u8arr], {type:mime});
+    console.log(result);
+    return result;
 }
 
-cameraTrigger.addEventListener("click", function(){    
+// 사진 촬영 버튼 클릭 시 실행
+cameraTrigger.addEventListener("click", function(){
+    // canvas 이미지 캡처    
     cameraSensor.width = cameraView.videoWidth; //640
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
+
+    // DataURL 생성 후 웹 페이지에 보여줌
     cameraOutput1.src = cameraSensor.toDataURL("image/webp");
     cameraOutput1.classList.add("taken");
 
-    var imageFile = dataURLtoFile(cameraSensor.toDataURL("image/png"));
-    console.log(imageFile);
+    // DataURL 생성 후 Blob형식으로 변환
+    var imageBlob = dataURLtoBlob(cameraSensor.toDataURL("image/png"));
 
+    // 텍스트 추출 실행
     const reader = new FileReader();
     reader.onload = function(e) {
         detectObjects(e.target.result);
     };
-    reader.readAsArrayBuffer(imageFile);
+    reader.readAsArrayBuffer(imageBlob);
 });
 
+// 페이지 로드 시 카메라 실행
 window.addEventListener("load", cameraStart, false);

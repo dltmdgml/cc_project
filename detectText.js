@@ -1,6 +1,6 @@
-var BucketName = '';
-var bucketRegion = '';
-var IdentityPoolId = '';
+var BucketName = 'seunghui-photo-bucket';
+var bucketRegion = 'us-east-1';
+var IdentityPoolId = 'us-east-1:77f3bdfe-f66c-484e-9a92-6ad706086519';
 
 AWS.config.update({
     region: bucketRegion,
@@ -23,27 +23,30 @@ function detectObjects(imgData) {
         },
     };
 
+    // 텍스트 추출
     rekognition.detectText(params, function(err, data) {
         if (err) {
             console.log(err, err.stack);
-    } else {
+        }
+        else {
             console.log(data);
-            displayTXT(data);
+            var detectedTXT = ArraytoText(data);
+            speakText(detectedTXT, 'en'); // 음성 변환
+            document.getElementById("transText").textContent = detectedTXT; // 번역할 텍스트 저장
+            detectedTXT = ""; // 초기화
         }
     });
 }
 
-var detectedTXT = "";
-function displayTXT(data) {
+// Array를 text로 변환
+function ArraytoText(data) {
+    var result = "";
     for(var i = 0; i < data.TextDetections.length;i++){
         if(data.TextDetections[i].Type === 'LINE')
         {
-        detectedTXT +=data.TextDetections[i].DetectedText + " ";
+            result += data.TextDetections[i].DetectedText + " ";
         }
     }
-
-    console.log(detectedTXT);
-    speakText(detectedTXT, 'en');
-    document.getElementById("transText").textContent = detectedTXT;
-    detectedTXT = ""; //초기화
+    console.log(result);
+    return result;
 }

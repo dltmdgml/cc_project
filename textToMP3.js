@@ -1,13 +1,14 @@
-AWS.config.region = '';
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: ''});
+AWS.config.region = 'us-east-1';
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'us-east-1:d7570e49-67ce-4e1b-850e-e65e4abac9f0'});
 
+// 음성 변환
 function speakText(detectedTXT, code) {
     const voices = {
         'en': 'Joanna',
         'ko': 'Seoyeon'
     }
   
-    const voice = voices[code]
+    var voice = voices[code];
 
     var speechParams = {
         OutputFormat: "mp3",
@@ -20,10 +21,12 @@ function speakText(detectedTXT, code) {
     var polly = new AWS.Polly({apiVersion: '2016-06-10'});
     var signer = new AWS.Polly.Presigner(speechParams, polly)
 
-    signer.getSynthesizeSpeechUrl(speechParams, function(error, url) {
-        if (error) {
+    // 음성 변환된 URL 추출
+    signer.getSynthesizeSpeechUrl(speechParams, function(err, url) {
+        if (err) {
             console.log(err, err.stack);
-        } else {
+        }
+        else {
             document.getElementById('audioSource').src = url;
             document.getElementById('audioPlayback').load();
         }
