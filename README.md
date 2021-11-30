@@ -16,11 +16,14 @@
  - 시각장애인 혹은 영어문맹자의 생활 속 불편함을 줄여주는 목적으로 개발하였습니다.
  - #### 개발 언어
       - CSS, HTML, JavaScript
- - #### 사용한 AWS 서비스
-      - AWS Rekognition (detect text in image)
-      - AWS Polly
+ - #### 사용한 Tool
+      - 퍼블릭 클라우드 컴퓨팅 서비스(Amazon AWS) 사용했습니다.
+      - Amazon Rekognition (Textract)
+      - Amazon Polly
       - AWS Translate
-
+- #### 플랫폼
+      - netlify
+      - 웹페이지 URL 생성
 ### 프로젝트 개발 결과물 소개
  - 웹 페이지를 제작하여 모바일 뿐만 아니라 웹캠이 있는 PC 환경에서 사용 가능합니다.  
  - 인터넷 익스플로어를 제외한 모든 브라우저에서 사용이 가능합니다. 
