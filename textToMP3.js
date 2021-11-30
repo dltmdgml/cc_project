@@ -1,5 +1,5 @@
-AWS.config.region = 'us-east-1';
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'us-east-1:d7570e49-67ce-4e1b-850e-e65e4abac9f0'});
+AWS.config.region = '';
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: ''});
 
 function speakText(detectedTXT, code) {
     const voices = {
