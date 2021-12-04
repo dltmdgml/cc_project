@@ -1,4 +1,4 @@
-## 사진의 소리
+# 사진의 소리
 
 ### 프로젝트 멤버 이름 및 담당 파트
 - [김민정](https://github.com/MinjeongKim03) (빅데이터학과 3학년)
@@ -21,15 +21,11 @@
       - Amazon Rekognition (Textract)
       - Amazon Polly
       - AWS Translate
-- #### 플랫폼
-      - netlify
 ### 프로젝트 개발 결과물 소개
  - 웹 페이지를 제작하여 모바일 뿐만 아니라 웹캠이 있는 PC 환경에서 사용 가능합니다.  
  - 인터넷 익스플로어를 제외한 모든 브라우저에서 사용이 가능합니다. 
  - 다이어그램
  ![image](https://user-images.githubusercontent.com/52689963/144101483-5383b010-fdab-4f8f-bcb9-ae86a187117a.png)
-
-
 ### 개발 결과물을 사용하는 방법
  - 인터넷 익스플로어를 제외한 브라우저로 [웹 페이지의 URL](https://cc-project.netlify.app/)(https://cc-project.netlify.app/)에 접속하여 읽고자 하는 대상을 촬영하면 이미지에서 텍스트를 인식한 후 변환된 음성이 자동으로 재생됩니다. 번역을 원한다면 번역 버튼을 누르면 한국어로 음성이 자동으로 재생됩니다.
  - 사용 방법
