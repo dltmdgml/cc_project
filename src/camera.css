@@ -36,6 +36,10 @@ html, body{
     left: calc(25% - 90px);
 }
 
+#camera--trigger:active{
+    background-color: gray;
+}
+
 #translation{
     width: 180px;
     color: white;
@@ -49,6 +53,10 @@ html, body{
     position: fixed;
     bottom: 30px;
     right: calc(25% - 90px);
+}
+
+#translation:active{
+    background-color: gray;
 }
 
 .taken {
