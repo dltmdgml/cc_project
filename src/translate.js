@@ -24,9 +24,14 @@ function Translate(text){
 translation.addEventListener("click", function (){
     var transText = document.getElementById("transText");
     if(!transText.textContent) {
-        speakText("번역할 내용이 없습니다. 사진촬영을 먼저 해주세요.", 'ko');
+        var audio = new Audio("sound/noText.mp3");
+        audio.play();
     }
     else{
-        Translate(transText.textContent);
+        var audio = new Audio("sound/translateStart.mp3");
+        audio.play();
+        setTimeout(function () {
+            Translate(transText.textContent);
+        }, 300);
     }
 });
