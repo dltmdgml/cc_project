@@ -32,6 +32,10 @@ function dataURLtoBlob(dataurl) {
 
 // 사진 촬영 버튼 클릭 시 실행
 cameraTrigger.addEventListener("click", function(){
+    // 카메라 셔터 효과음
+    var audio = new Audio("sound/camera-shutter.mp3");
+    audio.play();
+
     // canvas 이미지 캡처    
     cameraSensor.width = cameraView.videoWidth; //640
     cameraSensor.height = cameraView.videoHeight;
