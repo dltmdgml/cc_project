@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진의소리</title>
+    <!--aws-sdk-->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <!--camera.css-->
+    <link rel="stylesheet" href="camera.css">
+</head>
+<body>
+    <!--카메라-->
+    <main id="camera">        
+        <canvas id="camera--sensor"></canvas>
+        <video id="camera--view" autoplay playsinline></video>       
+        <img src="//:0" alt="" id="camera--output">
+        <button id="camera--trigger">사진촬영</button>
+        <button id="translation">번역</button>
+    </main>
+
+    <script src="camera.js"></script>
+
+    <!--텍스트 추출-->
+    <script src="detectText.js"></script>
+
+    <!--음성 변환-->
+    <iframe src="silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+    <audio id="audioPlayback" autoplay controls style="display:none">
+        <source id="audioSource" type="audio/mp3" src="">
+    </audio>
+    <script src="textToMP3.js"></script>
+
+    <!--번역-->
+    <p id="transText" style="display:none"></p>
+    <script src="translate.js"></script>
+</body>
+</html>
