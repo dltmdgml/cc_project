@@ -1,7 +1,7 @@
 AWS.config.region = '';
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: ''});
 
-// 음성 변환
+/ 음성 변환
 function speakText(detectedTXT, code) {
     const voices = {
         'en': 'Joanna',
@@ -28,7 +28,9 @@ function speakText(detectedTXT, code) {
         }
         else {
             document.getElementById('audioSource').src = url;
+            document.getElementById('audioPlayback').playbackRate = 0.72;
             document.getElementById('audioPlayback').load();
+            document.getElementById('audioPlayback').play();
         }
     });
 }
